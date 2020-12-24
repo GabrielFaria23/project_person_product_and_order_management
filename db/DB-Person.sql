@@ -1,0 +1,12 @@
+CREATE DATABASE project_compras;
+
+USE project_compras;
+
+CREATE TABLE IF NOT EXISTS person(
+	id INTEGER PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(120) NOT NULL,
+    telefone VARCHAR(11),
+    ativo BOOLEAN NOT NULL DEFAULT TRUE,
+    data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

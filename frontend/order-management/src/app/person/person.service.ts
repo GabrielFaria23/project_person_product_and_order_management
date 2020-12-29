@@ -15,4 +15,12 @@ export class PersonService {
   getPersonList(): Observable<any>{
     return this.http.get(`${this.url}/people`);
   }
+
+  savePerson(person: Person): Observable<any>{
+    return this.http.post<Person>(`${this.url}/people`,person);
+  }
+
+  deletePerson(id: number): Observable<any>{
+    return this.http.delete(`${this.url}/people/${id}`, {responseType: 'text'})
+  }
 }

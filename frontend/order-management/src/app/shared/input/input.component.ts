@@ -8,11 +8,11 @@ import { FormControlName, NgModel } from '@angular/forms';
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  @Input() label: string
+  @Input() label: string;
   @Input() errorMessage: string;
   @Input() showTip: boolean = true;
 
-  input: any
+  input: any;
 
   @ContentChild(NgModel, {static: false}) model: NgModel
   @ContentChild(FormControlName, {static: false}) control: FormControlName
@@ -20,6 +20,7 @@ export class InputComponent implements OnInit, AfterContentInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.errorMessage);
   }
 
   ngAfterContentInit() {

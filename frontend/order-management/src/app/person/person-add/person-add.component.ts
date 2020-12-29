@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 
 @Component({
@@ -20,10 +21,11 @@ export class PersonAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.personForm = new FormGroup({
-      name: this.fb.control("", [Validators.required, Validators.minLength(2)]),
+      nome: this.fb.control("", [Validators.required, Validators.minLength(2)]),
       email: this.fb.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
-      emailConfirmation: this.fb.control("", [Validators.required, Validators.pattern(this.emailPattern)])
-    }, { validators: [PersonAddComponent.equalsTo], updateOn: 'blur'})
+      emailConfirmation: this.fb.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
+      telefone: this.fb.control("",[])
+    }, { validators: [PersonAddComponent.equalsTo], updateOn: 'change'})
   }
 
   static equalsTo(group: AbstractControl): {[key:string]: boolean}{
@@ -33,11 +35,19 @@ export class PersonAddComponent implements OnInit {
       return undefined
     }
     if(email.value != emailConfirmation.value){
-      return{emailNotMatch:true}
+      return{emailsNotMatch:true}
     }
     return undefined
   }
 
-  
+  cancel(){
+    this.router.navigate(['people']);
+  }
 
+  savePerson(person: Person) {
+    this.personService.savePerson(person).
+      subscribe(data => {
+        console.log(data)
+      });
+  }
 }

@@ -15,24 +15,17 @@
                 <th>Remove Person</th>
             </tr>
         </thead>
-        <div *ngIf="people">
-            <tbody>
-                <tr *ngFor="let person of people | async">
-                    <td>{{person.id}}</td>
-                    <td>{{person.nome}}</td>
-                    <td>{{person.email}}</td>
-                    <td>{{person.telefone}}</td>
-                    <td><button class="btn btn-primary" (click)="detailsPerson(person.id)" role="button" name="Details Person" > <i class="fa fa-info "></i> </button></td>
-                    <td><button class="btn btn-primary" (click)="editPerson(person.id)" role="button" name="Edit Person" > <i class="fa fa-edit "></i> </button></td>
-                    <td><button class="btn btn-danger" (click)="deletePerson(person.id)" role="button" name="Remove Person"><i class="fa fa-trash" ></i></button></td>
-                </tr>
-            </tbody>
-        </div>
-        <div *ngIf="!people">
-            <tbody>
-                No content founded
-            </tbody>
-        </div>
+        <tbody>
+            <tr *ngFor="let person of people | async">
+                <td>{{person.id}}</td>
+                <td>{{person.nome}}</td>
+                <td>{{person.email}}</td>
+                <td>{{person.telefone}}</td>
+                <td><button class="btn btn-primary" (click)="detailsPerson(person.id)" role="button" name="Details Person" > <i class="fa fa-info "></i> </button></td>
+                <td><button class="btn btn-primary" (click)="editPerson(person.id)" role="button" name="Edit Person" > <i class="fa fa-edit "></i> </button></td>
+                <td><button class="btn btn-danger" (click)="deletePerson(person.id)" role="button" name="Remove Person"><i class="fa fa-trash" ></i></button></td>
+            </tr>
+        </tbody>      
         <tfoot class="tfoot-dark"></tfoot>
     </table>
     <div>

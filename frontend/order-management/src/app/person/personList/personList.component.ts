@@ -37,7 +37,15 @@ export class PersonListComponent implements OnInit {
   }
 
   deletePerson(id: number){
-    
+    this.personService.deletePerson(id)
+    .subscribe(
+        data=>{
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error)
+      )
+      
   }
 
 }

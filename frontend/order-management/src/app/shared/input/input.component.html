@@ -1,9 +1,9 @@
 <div class="form-group has-feedback" [class.has-success]="hasSuccess()"
     [class.has-error]="hasError()">
-    <label for="inputSuccess"><i class="fa fa-check">{{ label }}</i></label>
+    <label for="inputSuccess" class="form-label">{{ label }}</label> <br>
 
     <ng-content></ng-content>
 
-    <span *ngIf="showTip && hasSuccess()"><i class="fa fa-check"></i>Ok</span>
-    <span *ngIf="showTip && hasError()"><i class="fa fa-remove"></i> {{errorMessage}} </span>
+    <span *ngIf="showTip && hasSuccess()" style="color: green;"><i class="fa fa-check"></i>Ok</span>
+    <span *ngIf="showTip && hasError()" style="color: red;"><i class="fa fa-remove"></i> {{errorMessage}} </span>
 </div>

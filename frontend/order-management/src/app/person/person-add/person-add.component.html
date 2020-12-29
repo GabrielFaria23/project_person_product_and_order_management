@@ -4,24 +4,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <app-input errormessage="Campo Obrigatório e com 5 caracteres" label="Name: ">
-                        <input NgModule class="formControl" formControlName="name" placeholder="Name" autocomplete="off">
+                    <span *ngIf="personForm.hasError('emailsNotMatch')" style="color: red;"><i class="fa fa-remove"></i> Email-s don't match</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Name " errorMessage="Mandatory field with 5 characters">
+                        <input class="form-control" formControlName="nome" placeholder="Name" autocomplete="off">
                     </app-input>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <app-input errormessage="E-mail inválido" label="Email: ">
-                        <input class="formControl" formControlName="email" placeholder="Email" autocomplete="off">
+                    <app-input label="Email" errorMessage="Invalid E-mail" >
+                        <input class="form-control" formControlName="email" placeholder="Email" autocomplete="off">
                     </app-input>
                 </div>                
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <app-input errormessage="E-mail inválido" label="Email Confirmation: ">
-                        <input class="formControl" formControlName="emailConfirmation" placeholder="Email Confirmation" autocomplete="off">
+                    <app-input label="Email Confirmation" errorMessage="Invalid E-mail">
+                        <input class="form-control" formControlName="emailConfirmation" placeholder="Email Confirmation" autocomplete="off">
                     </app-input>
                 </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Phone (Optional)" errorMessage="">
+                        <input class="form-control" formControlName="telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button (click)="savePerson(personForm.value)"[disabled]="personForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Save</button>                    
+                </div>
+                <div class="col-sm-4">
+                    <button (click)="cancel()" class="btn btn-danger form-control" style="margin-bottom: 5px;"><i class="fa fa-close"></i> Cancel</button>
+                </div>
+                <div class="col-sm-4">
+                    <button [disabled]="personForm.untouched" (click)="personForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
+                </div>
             </div>
         </div>
     </form>

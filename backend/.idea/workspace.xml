@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="89bc0198-d750-48aa-8f2f-4bdbc1bde43d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/person-project/src/main/java/com/personproject/personproject/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/person-project/src/main/java/com/personproject/personproject/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/person-project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/person-project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/e2e/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/e2e/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tslint.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mIKxlpxuckBbF5M0x9kFb973bW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89bc0198-d750-48aa-8f2f-4bdbc1bde43d" name="Default Changelist" comment="" />
+      <created>1609175940086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609175940086</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

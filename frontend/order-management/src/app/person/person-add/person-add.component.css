@@ -1,0 +1,14 @@
+fieldset{
+    border: solid;
+    border-width: thin;
+    border-color: gray;
+    margin-left: 14%;
+    margin-right: 14%;
+    min-width: 699px;
+}
+
+fieldset legend {
+    display: block;
+    margin-left: 20px;
+    width: auto;
+}

@@ -1,0 +1,28 @@
+<fieldset>
+    <legend>Person data</legend>
+    <form [formGroup]="personForm" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input errormessage="Campo Obrigatório e com 5 caracteres" label="Name: ">
+                        <input NgModule class="formControl" formControlName="name" placeholder="Name" autocomplete="off">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input errormessage="E-mail inválido" label="Email: ">
+                        <input class="formControl" formControlName="email" placeholder="Email" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input errormessage="E-mail inválido" label="Email Confirmation: ">
+                        <input class="formControl" formControlName="emailConfirmation" placeholder="Email Confirmation" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+        </div>
+    </form>
+</fieldset>

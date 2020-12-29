@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "person-management": {
+    "order-management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/person-management",
+            "outputPath": "dist/order-management",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,15 +21,16 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"              
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"              
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -67,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "person-management:build"
+            "browserTarget": "order-management:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "person-management:build:production"
+              "browserTarget": "order-management:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "person-management:build"
+            "browserTarget": "order-management:build"
           }
         },
         "test": {
@@ -115,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "person-management:serve"
+            "devServerTarget": "order-management:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "person-management:serve:production"
+              "devServerTarget": "order-management:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "person-management" 
+  "defaultProject": "order-management"
 }

@@ -1,6 +1,7 @@
 nav {
     font-family: cursive;    
     font-size: 23px;
+    min-width: 810px;
 }
 
 .nav-link{

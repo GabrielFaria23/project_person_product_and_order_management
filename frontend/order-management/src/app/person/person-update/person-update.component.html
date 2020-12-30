@@ -1,1 +1,54 @@
-<p>person-update works!</p>
+<fieldset>
+    <legend>Person data</legend>
+    <form [formGroup]="personUpdateForm" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span *ngIf="personUpdateForm.hasError('emailsNotMatch')" style="color: red;"><i class="fa fa-remove"></i> Email-s don't match</span>
+                </div>
+            </div>
+            <div [hidden]="true">
+                <input type="text" class="form-control" formControlName="id" [(ngModel)]="person.id" autocomplete="off">
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Name " errorMessage="Mandatory field with 5 characters">
+                        <input type="text" class="form-control" formControlName="nome" [(ngModel)]="person.nome" placeholder="Name" autocomplete="off">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Email" errorMessage="Invalid E-mail" >
+                        <input type="text" class="form-control" formControlName="email" [ngModel]="person.email" placeholder="Email" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Email Confirmation" errorMessage="Invalid E-mail">
+                        <input type="text" class="form-control" formControlName="emailConfirmation" [ngModel]="person.email" placeholder="Email Confirmation" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="Phone (Optional)" errorMessage="">
+                        <input type="text" class="form-control" formControlName="telefone" [(ngModel)]="person.telefone" placeholder="(XX) XXXXX-XXXX" autocomplete="off">
+                    </app-input>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button (click)="updatePerson(personUpdateForm.value)"[disabled]="personUpdateForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Confirm Edit</button>                    
+                </div>
+                <div class="col-sm-4">
+                    <button (click)="cancel()" class="btn btn-danger form-control" style="margin-bottom: 5px;"><i class="fa fa-close"></i> Cancel</button>
+                </div>
+                <div class="col-sm-4">
+                    <button [disabled]="personUpdateForm.untouched" (click)="personUpdateForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

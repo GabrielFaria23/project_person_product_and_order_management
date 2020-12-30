@@ -48,6 +48,7 @@ export class PersonAddComponent implements OnInit {
     this.personService.savePerson(person).
       subscribe(data => {
         console.log(data)
+        this.router.navigate(['/people'])
       });
   }
 }

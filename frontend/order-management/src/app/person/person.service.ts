@@ -23,4 +23,12 @@ export class PersonService {
   deletePerson(id: number): Observable<any>{
     return this.http.delete(`${this.url}/people/${id}`, {responseType: 'text'})
   }
+
+  getPersonById(id:number): Observable<any>{
+    return this.http.get(`${this.url}/people/${id}`);
+  }
+
+  updatePerson(person: Person): Observable<any>{
+    return this.http.put(`${this.url}/people/${person.id}`, person);
+  }
 }

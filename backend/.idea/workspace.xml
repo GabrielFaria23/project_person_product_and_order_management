@@ -19,23 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89bc0198-d750-48aa-8f2f-4bdbc1bde43d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/person-project/src/main/java/com/personproject/personproject/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/person-project/src/main/java/com/personproject/personproject/controller/PersonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person-project/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/person-project/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/e2e/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/e2e/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/src/app/person/person.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/person-management/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/person-management/tslint.json" afterDir="false" />
-    </list>
+    <list default="true" id="89bc0198-d750-48aa-8f2f-4bdbc1bde43d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -20,7 +20,6 @@ export class InputComponent implements OnInit, AfterContentInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.errorMessage);
   }
 
   ngAfterContentInit() {

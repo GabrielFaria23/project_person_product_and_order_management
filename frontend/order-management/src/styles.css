@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+nav {
+    font-family: cursive;    
+    font-size: 23px;
+    min-width: 810px;
+}
+
+.nav-link{
+    color: white;
+}
+
+.footer {
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    color: white;
+    background-color: #343a40;
+}

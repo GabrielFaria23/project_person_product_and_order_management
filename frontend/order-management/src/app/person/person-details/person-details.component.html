@@ -3,28 +3,25 @@
     <div class="container" *ngIf="person">
         <div class="row">
             <div class="col-sm-12">
-                <app-input label="Name " errorMessage="Mandatory field with 5 characters">
-                    <input type="text" class="form-control" [(ngModel)]="person.nome" readonly>
-                </app-input>
+                <label for="Nome">Nome: </label>
+                <input type="text" class="form-control" [(ngModel)]="person.nome" readonly>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <app-input label="Email" errorMessage="Invalid E-mail" >
-                    <input type="text" class="form-control" [ngModel]="person.email" readonly>
-                </app-input>
+                <label for="Email">Email: </label>
+                <input type="text" class="form-control" [ngModel]="person.email" readonly>
             </div>                
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <app-input label="Phone (Optional)" errorMessage="">
-                    <input type="text" class="form-control" [(ngModel)]="person.telefone" readonly>
-                </app-input>
+                <label for="Telefone">Telefone: </label>
+                <input type="text" class="form-control" [(ngModel)]="person.telefone" readonly>
             </div>                
         </div>
         <div class="row">
             <div class="col-sm-4 offset-sm-4">
-                <button (click)="BackToList()" class="btn btn-dark form-control" style="margin-bottom: 5px;"><i class="fa fa-arrow-left"></i> Back to List </button>                    
+                <button (click)="BackToList()" class="btn btn-dark form-control" style="margin : 10px 0;"><i class="fa fa-arrow-left"></i> Back to List </button>                    
             </div>
         </div>
     </div>

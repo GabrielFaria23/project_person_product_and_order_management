@@ -1,0 +1,34 @@
+<fieldset >
+    <legend>Products List</legend>
+    <div>
+        <button class="btn btn-dark" (click)="addProduct()" role="buttorn" name="Add Product"><i class="fa fa-user-plus"></i> Novo</button>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Details Product</th>
+                <th>Edit Product</th>
+                <th>Remove Product</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Product of products | async">
+                <td>{{product.id}}</td>
+                <td>{{product.nome}}</td>
+                <td>{{product.email}}</td>
+                <td>{{product.telefone}}</td>
+                <td><button class="btn btn-primary" (click)="detailsProduct(product.id)" role="button" name="Details Product" > <i class="fa fa-info "></i> </button></td>
+                <td><button class="btn btn-primary" (click)="editProduct(product.id)" role="button" name="Edit Product" > <i class="fa fa-edit "></i> </button></td>
+                <td><button class="btn btn-danger" (click)="deleteProduct(product.id)" role="button" name="Remove Product"><i class="fa fa-trash" ></i></button></td>
+            </tr>
+        </tbody>      
+        <tfoot class="tfoot-dark"></tfoot>
+    </table>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</fieldset>

@@ -1,44 +1,47 @@
 <fieldset>
-    <legend>Add Product</legend>
-    <form [formGroup]="productForm" novalidate>
+    <legend>Update Order</legend>
+    <form [formGroup]="orderUpdateForm" novalidate>
         <div class="container">            
+            <div [hidden]="true">
+                <input type="text" class="form-control" formControlName="id" [(ngModel)]="order.id" autocomplete="off">
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <app-input label="Name " errorMessage="Mandatory field with 2 characters">
-                        <input class="form-control" formControlName="nome" placeholder="Name" autocomplete="off">
+                        <input class="form-control" formControlName="nome" placeholder="Name" [ngModel]="order.nome" autocomplete="off">
                     </app-input>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <app-input label="Lote" errorMessage="Mandatory field with 2 characters" >
-                        <input class="form-control" formControlName="lote" placeholder="Lote" autocomplete="off">
+                        <input class="form-control" formControlName="lote" placeholder="Lote" [ngModel]="order.lote" autocomplete="off">
                     </app-input>
                 </div>                
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <app-input label="Quantity" errorMessage="Mandatory field">
-                        <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity" autocomplete="off">
+                        <input type="number" class="form-control" formControlName="quantity" placeholder="Quantity" [ngModel]="order.quantity" autocomplete="off">
                     </app-input>
                 </div>                
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <app-input label="Manufacturer" errorMessage="Mandatory field with 2 characters">
-                        <input class="form-control" formControlName="manufacturer" placeholder="Manufacturer" autocomplete="off">
+                        <input class="form-control" formControlName="manufacturer" placeholder="Manufacturer" [ngModel]="order.manufacturer" autocomplete="off">
                     </app-input>
                 </div>                
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <button (click)="saveProduct(productForm.value)"[disabled]="productForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Save</button>                    
+                    <button (click)="updateOrder(orderUpdateForm.value)"[disabled]="orderUpdateForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Confirm Edit</button>                    
                 </div>
                 <div class="col-sm-4">
                     <button (click)="cancel()" class="btn btn-danger form-control" style="margin-bottom: 5px;"><i class="fa fa-close"></i> Cancel</button>
                 </div>
                 <div class="col-sm-4">
-                    <button [disabled]="productForm.untouched" (click)="productForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
+                    <button [disabled]="orderUpdateForm.untouched" (click)="orderUpdateForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
                 </div>
             </div>
         </div>

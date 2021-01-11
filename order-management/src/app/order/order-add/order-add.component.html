@@ -1,6 +1,6 @@
 <fieldset>
-    <legend>Add Product</legend>
-    <form [formGroup]="productForm" novalidate>
+    <legend>Add Order</legend>
+    <form [formGroup]="orderForm" novalidate>
         <div class="container">            
             <div class="row">
                 <div class="col-sm-12">
@@ -32,13 +32,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <button (click)="saveProduct(productForm.value)"[disabled]="productForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Save</button>                    
+                    <button (click)="saveOrder(orderForm.value)"[disabled]="orderForm.invalid" class="btn btn-success form-control" style="margin-bottom: 5px;"><i class="fa fa-save"></i> Save</button>                    
                 </div>
                 <div class="col-sm-4">
                     <button (click)="cancel()" class="btn btn-danger form-control" style="margin-bottom: 5px;"><i class="fa fa-close"></i> Cancel</button>
                 </div>
                 <div class="col-sm-4">
-                    <button [disabled]="productForm.untouched" (click)="productForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
+                    <button [disabled]="orderForm.untouched" (click)="orderForm.reset()" class="btn btn-dark form-control" style="margin-bottom: 5px;"> <i class="fa fa-eraser"></i> Clear Fields</button>
                 </div>
             </div>
         </div>

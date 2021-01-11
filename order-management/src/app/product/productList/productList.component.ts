@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -12,16 +13,22 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
 
   products: Observable<Product[]>;
+  listProducts : Product[] = [];
 
   constructor(private productService: ProductService,
               private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     this.reloadData();
   }
 
   reloadData(){
     this.products = this.productService.getProductList();
+    this.products.subscribe(
+      data => {
+        this.listProducts = data
+      }, error => console.log(error)  
+    )
   }
 
   addProduct(){

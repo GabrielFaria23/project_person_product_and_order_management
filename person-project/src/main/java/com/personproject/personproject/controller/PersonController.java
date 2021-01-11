@@ -37,6 +37,12 @@ public class PersonController {
         return personService.findById(id);
     }
 
+    @GetMapping("/{cpf}")
+    @ResponseStatus(HttpStatus.OK)
+    public PersonDTO findByCpf(@PathVariable String cpf) throws PersonNotFoundException{
+        return personService.findByCpf(cpf);
+    }
+
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public PersonDTO updatePerson(@PathVariable long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {

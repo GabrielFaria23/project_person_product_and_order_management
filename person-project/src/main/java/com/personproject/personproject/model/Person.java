@@ -6,11 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "Person_table")
 public class Person {
 
     @Id
@@ -18,14 +21,29 @@ public class Person {
     private long id;
 
     @NotNull
-    @Column(name = "nome")
     private String nome;
 
     @NotNull
-    @Column(name = "email")
+    private String cpf;
+
+    @NotNull
+    private String rg;
+
+    @NotNull
     private String email;
 
-    @Column(name = "telefone")
     private String telefone;
 
+    @OneToMany(
+            mappedBy = "person",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Order> orders = new ArrayList<>();
+
+    public Person(String nome, String email, String telefone) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+    }
 }

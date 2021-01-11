@@ -1,41 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product } from '../product.model';
-import { ProductService } from '../product.service';
+import { Order } from '../order.model';
+import { OrderService } from '../order.service';
 
 @Component({
-  selector: 'app-product-update',
-  templateUrl: './product-update.component.html',
-  styleUrls: ['./product-update.component.css']
+  selector: 'app-order-update',
+  templateUrl: './order-update.component.html',
+  styleUrls: ['./order-update.component.css']
 })
-export class ProductUpdateComponent implements OnInit {
+export class OrderUpdateComponent implements OnInit {
   
-  product: Product;
+  order: Order;
   id: number;
-  productUpdateForm: FormGroup;
+  orderUpdateForm: FormGroup;
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-  constructor(private productService: ProductService,
+  constructor(private orderService: OrderService,
               private route: ActivatedRoute,
               private fb: FormBuilder,
               private router: Router) { }
 
   ngOnInit(){
 
-    this.product = new Product;
+    this.order = new Order;
     this.id = this.route.snapshot.params['id'];
 
-    this.productService.getProductById(this.id)
+    this.orderService.getOrderById(this.id)
       .subscribe(
         data => {
-          this.product = data;
+          this.order = data;
         },
         error => console.log(error)
       );
 
-    this.productUpdateForm = new FormGroup({
+    this.orderUpdateForm = new FormGroup({
       id: this.fb.control("", []),
       nome: this.fb.control("", [Validators.required, Validators.minLength(2)]),
       lote: this.fb.control("", [Validators.required, Validators.minLength(2)]),
@@ -45,17 +45,17 @@ export class ProductUpdateComponent implements OnInit {
 
   }
 
-  updateProduct(product: Product){
-    this.productService.updateProduct(product)
+  updateOrder(order: Order){
+    this.orderService.updateOrder(order)
       .subscribe(
         data=> {
           console.log(data);
-          this.router.navigate(['products']);
+          this.router.navigate(['orders']);
         }, error => console.log(error)
       )
   }
 
   cancel(){
-    this.router.navigate(['products'])
+    this.router.navigate(['orders'])
   }
 }

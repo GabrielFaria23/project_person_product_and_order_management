@@ -1,28 +1,28 @@
 <fieldset>
-    <legend>Product data</legend>
-    <div class="container" *ngIf="product">
+    <legend>Order data</legend>
+    <div class="container" *ngIf="order">
         <div class="row">
             <div class="col-sm-12">
                 <label for="Nome">Nome: </label>
-                <input type="text" class="form-control" [(ngModel)]="product.nome" readonly>
+                <input type="text" class="form-control" [(ngModel)]="order.nome" readonly>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <label for="Lote">Lote: </label>
-                <input type="text" class="form-control" [ngModel]="product.lote" readonly>
+                <input type="text" class="form-control" [ngModel]="order.lote" readonly>
             </div>                
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <label for="Quantity">Quantity: </label>
-                <input type="text" class="form-control" [(ngModel)]="product.quantity" readonly>
+                <input type="text" class="form-control" [(ngModel)]="order.quantity" readonly>
             </div>                
         </div>
         <div class="row">
             <div class="col-sm-12">
                 <label for="Manufacturer">Manufacturer: </label>
-                <input type="text" class="form-control" [(ngModel)]="product.manufacturer" readonly>
+                <input type="text" class="form-control" [(ngModel)]="order.manufacturer" readonly>
             </div>                
         </div>
         <div class="row">

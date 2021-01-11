@@ -1,34 +1,32 @@
 package com.personproject.personproject.dto;
 
+import com.personproject.personproject.model.Person;
+import com.personproject.personproject.model.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ProductDTO {
+public class OrderDTO {
 
     private long id;
 
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String nome;
+    @Size(max = 120)
+    private Date dateHour;
 
     @NotEmpty
-    @Size(min = 2, max = 100)
-    private String lote;
+    private Person person;
 
     @NotEmpty
-    private long Quantity;
-
-    @NotEmpty
-    @Size(min = 2, max = 100)
-    private String manufacturer;
+    private List<Product> products;
 }

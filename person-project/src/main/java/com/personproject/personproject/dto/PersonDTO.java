@@ -23,6 +23,14 @@ public class PersonDTO {
     private String nome;
 
     @NotEmpty
+    @Size(min= 11)
+    private String cpf;
+
+    @NotEmpty
+    @Size(min= 10)
+    private String rg;
+
+    @NotEmpty
     @Size(max = 200)
     private String email;
 

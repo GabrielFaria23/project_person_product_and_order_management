@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -11,7 +12,7 @@ import { PersonService } from '../person.service';
 })
 export class PersonListComponent implements OnInit {
 
-  people: Observable<Person[]>;
+  people: Person[] = [];
 
   constructor(private personService: PersonService,
               private router: Router) { }
@@ -21,7 +22,10 @@ export class PersonListComponent implements OnInit {
   }
 
   reloadData(){
-    this.people = this.personService.getPersonList();
+    this.personService.getPersonList().subscribe(
+      data => this.people = data,
+      error => console.log(error)
+    )
   }
 
   addPerson(){

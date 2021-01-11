@@ -38,6 +38,8 @@ export class PersonUpdateComponent implements OnInit {
     this.personUpdateForm = new FormGroup({
       id: this.fb.control("", []),
       nome: this.fb.control("", [Validators.required, Validators.minLength(2)]),
+      cpf: this.fb.control("", [Validators.required, Validators.minLength(11)]),
+      rg: this.fb.control("", [Validators.required, Validators.minLength(10)]),
       email: this.fb.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.fb.control("", [Validators.required, Validators.pattern(this.emailPattern)]),
       telefone: this.fb.control("",[])

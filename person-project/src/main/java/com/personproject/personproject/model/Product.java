@@ -11,6 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Table(name = "Product_table")
 public class Product {
 
     @Id
@@ -18,19 +19,19 @@ public class Product {
     private long id;
 
     @NotNull
-    @Column(name = "nome")
     private String nome;
 
     @NotNull
-    @Column(name = "lote")
     private String lote;
 
     @NotNull
-    @Column(name = "quantidade")
-    private long quantidade;
+    private long Quantity;
 
     @NotNull
-    @Column(name = "fabricante")
-    private String fabricante;
+    private String manufacturer;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
 }

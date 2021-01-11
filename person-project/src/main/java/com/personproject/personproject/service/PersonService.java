@@ -35,6 +35,10 @@ public class PersonService {
         return personMapper.toDTO(verifyIfExists(id));
     }
 
+    public PersonDTO findByCpf(String cpf) {
+        return personMapper.toDTO(personRepository.findByCpf(cpf));
+    }
+
     public PersonDTO updatePerson(long id, PersonDTO personDTO) throws PersonNotFoundException {
         Person personToUpdate = verifyIfExists(id);
         personToUpdate.setNome(personDTO.getNome());
@@ -44,12 +48,13 @@ public class PersonService {
         return personMapper.toDTO(personToUpdate);
     }
 
-    public Person verifyIfExists(long id) throws PersonNotFoundException {
-        return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException(id));
-    }
-
     public void deletePerson(long id) throws PersonNotFoundException {
         Person personToDelete = verifyIfExists(id);
         personRepository.delete(personToDelete);
     }
+
+    public Person verifyIfExists(long id) throws PersonNotFoundException {
+        return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException(id));
+    }
+
 }

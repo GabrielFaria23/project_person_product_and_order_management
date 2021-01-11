@@ -30,8 +30,8 @@ public class ProductService {
         Product productToUpdate = verifyIfExists(id);
         productToUpdate.setNome(productDTO.getNome());
         productToUpdate.setLote(productDTO.getLote());
-        productToUpdate.setQuantidade(productDTO.getQuantidade());
-        productToUpdate.setFabricante(productDTO.getFabricante());
+        productToUpdate.setQuantity(productDTO.getQuantity());
+        productToUpdate.setManufacturer(productDTO.getManufacturer());
         Product productUpdated = productRepository.save(productToUpdate);
         return productMapper.toDTO(productToUpdate);
     }

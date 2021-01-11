@@ -1,0 +1,41 @@
+<fieldset >
+    <legend>Orders List</legend>
+    <div *ngIf="!listOrders.length == 0">
+        <div>
+            <button class="btn btn-dark" (click)="addOrder()" role="buttorn" name="Add Order"><i class="fa fa-user-plus"></i> Novo</button>
+        </div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Lote</th>
+                    <th>Quantity</th>
+                    <th>Manufacturer</th>
+                    <th>Details Order</th>
+                    <th>Edit Order</th>
+                    <th>Remove Order</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of listOrders">
+                    <td>{{order.id}}</td>
+                    <td>{{order.nome}}</td>
+                    <td>{{order.lote}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.manufacturer}}</td>
+                    <td><button class="btn btn-primary" (click)="detailsOrder(order.id)" role="button" name="Details Order" > <i class="fa fa-info "></i> </button></td>
+                    <td><button class="btn btn-primary" (click)="editOrder(order.id)" role="button" name="Edit Order" > <i class="fa fa-edit "></i> </button></td>
+                    <td><button class="btn btn-danger" (click)="deleteOrder(order.id)" role="button" name="Remove Order"><i class="fa fa-trash" ></i></button></td>
+                </tr>
+            </tbody>      
+            <tfoot class="tfoot-dark"></tfoot>
+        </table>
+    </div>
+    <div *ngIf="listOrders.length == 0">
+        <h5 style="text-align: center;">No registered person, click <a routerLink="/orders/add" >here</a> to add </h5>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</fieldset>

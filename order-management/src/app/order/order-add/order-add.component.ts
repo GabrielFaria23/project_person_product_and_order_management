@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Product } from '../product.model';
-import { ProductService } from '../product.service';
+import { Order } from '../order.model';
+import { OrderService } from '../order.service';
 
 @Component({
-  selector: 'app-product-add',
-  templateUrl: './product-add.component.html',
-  styleUrls: ['./product-add.component.css']
+  selector: 'app-order-add',
+  templateUrl: './order-add.component.html',
+  styleUrls: ['./order-add.component.css']
 })
-export class ProductAddComponent implements OnInit {
+export class OrderAddComponent implements OnInit {
 
-  productForm: FormGroup;
+  orderForm: FormGroup;
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-  constructor(private productService: ProductService,
+  constructor(private orderService: OrderService,
               private fb: FormBuilder,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.productForm = new FormGroup({
+    this.orderForm = new FormGroup({
       nome: this.fb.control("", [Validators.required, Validators.minLength(2)]),
       lote: this.fb.control("", [Validators.required, Validators.minLength(2)]),
       quantity: this.fb.control("", [Validators.required]),
@@ -29,14 +29,14 @@ export class ProductAddComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(['products']);
+    this.router.navigate(['orders']);
   }
 
-  saveProduct(product: Product) {
-    this.productService.saveProduct(product).
+  saveOrder(order: Order) {
+    this.orderService.saveOrder(order).
       subscribe(data => {
         console.log(data)
-        this.router.navigate(['/products'])
+        this.router.navigate(['/orders'])
       });
   }
 }

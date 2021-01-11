@@ -1,5 +1,5 @@
 <fieldset>
-    <legend>Person data</legend>
+    <legend>Update Person</legend>
     <form [formGroup]="personUpdateForm" novalidate>
         <div class="container">
             <div class="row">
@@ -14,6 +14,20 @@
                 <div class="col-sm-12">
                     <app-input label="Name " errorMessage="Mandatory field with 5 characters">
                         <input type="text" class="form-control" formControlName="nome" [(ngModel)]="person.nome" placeholder="Name" autocomplete="off">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="CPF " errorMessage="Mandatory field with 11 characters">
+                        <input class="form-control" formControlName="cpf" placeholder="CPF" autocomplete="off">
+                    </app-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-input label="RG " errorMessage="Mandatory field with 10 characters">
+                        <input class="form-control" formControlName="rg" placeholder="RG" autocomplete="off">
                     </app-input>
                 </div>
             </div>

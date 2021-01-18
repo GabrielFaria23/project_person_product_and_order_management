@@ -41,8 +41,10 @@ public class Person {
     )
     private List<Order> orders = new ArrayList<>();
 
-    public Person(String nome, String email, String telefone) {
+    public Person(String nome, String cpf, String rg, String email, String telefone) {
         this.nome = nome;
+        this.cpf = cpf;
+        this.rg = rg;
         this.email = email;
         this.telefone = telefone;
     }

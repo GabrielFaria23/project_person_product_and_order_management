@@ -42,6 +42,8 @@ public class PersonService {
     public PersonDTO updatePerson(long id, PersonDTO personDTO) throws PersonNotFoundException {
         Person personToUpdate = verifyIfExists(id);
         personToUpdate.setNome(personDTO.getNome());
+        personToUpdate.setCpf(personDTO.getCpf());
+        personToUpdate.setRg(personDTO.getRg());
         personToUpdate.setEmail(personDTO.getEmail());
         personToUpdate.setTelefone(personDTO.getTelefone());
         personRepository.save(personToUpdate);

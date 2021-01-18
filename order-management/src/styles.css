@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 nav {
-    font-family: cursive;    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
     font-size: 23px;
     min-width: 810px;
 }
@@ -14,5 +14,5 @@ nav {
     bottom:0px;
     width:100%;
     color: white;
-    background-color: #343a40;
+    background-color: #007bff!important;
 }

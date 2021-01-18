@@ -33,5 +33,9 @@ fieldset legend {
     width: auto;
 }
 
+tbody td button {
+    width: 40px;
+}
+
 
 

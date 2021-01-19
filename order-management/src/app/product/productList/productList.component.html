@@ -1,36 +1,70 @@
 <fieldset >
     <legend>Products List</legend>
-    <div *ngIf="!listProducts.length == 0">
-        <div>
-            <button class="btn btn-dark" (click)="addProduct()" role="buttorn" name="Add Product"><i class="fa fa-user-plus"></i> Novo</button>
+    <div *ngIf="!isOrder">
+        <div *ngIf="!listProducts.length == 0">
+            <div>
+                <button class="btn btn-primary" (click)="addProduct()" role="buttorn" name="Add Product"><i class="fa fa-user-plus"></i> Novo</button>
+            </div>
+            <table class="table table-bordered">
+                <thead class="thead-primary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Lote</th>
+                        <th>Quantity</th>
+                        <th>Manufacturer</th>
+                        <th>Details Product</th>
+                        <th>Edit Product</th>
+                        <th>Remove Product</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of listProducts">
+                        <td>{{product.id}}</td>
+                        <td>{{product.nome}}</td>
+                        <td>{{product.lote}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.manufacturer}}</td>
+                        <td><button class="btn btn-primary" (click)="detailsProduct(product.id)" role="button" name="Details Product" > <i class="fa fa-info "></i> </button></td>
+                        <td><button class="btn btn-primary" (click)="editProduct(product.id)" role="button" name="Edit Product" > <i class="fa fa-edit "></i> </button></td>
+                        <td><button class="btn btn-danger" (click)="deleteProduct(product.id)" role="button" name="Remove Product"><i class="fa fa-trash" ></i></button></td>
+                    </tr>
+                </tbody>      
+                <tfoot class="tfoot-primary"></tfoot>
+            </table>
         </div>
-        <table class="table table-striped table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Lote</th>
-                    <th>Quantity</th>
-                    <th>Manufacturer</th>
-                    <th>Details Product</th>
-                    <th>Edit Product</th>
-                    <th>Remove Product</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let product of listProducts">
-                    <td>{{product.id}}</td>
-                    <td>{{product.nome}}</td>
-                    <td>{{product.lote}}</td>
-                    <td>{{product.quantity}}</td>
-                    <td>{{product.manufacturer}}</td>
-                    <td><button class="btn btn-primary" (click)="detailsProduct(product.id)" role="button" name="Details Product" > <i class="fa fa-info "></i> </button></td>
-                    <td><button class="btn btn-primary" (click)="editProduct(product.id)" role="button" name="Edit Product" > <i class="fa fa-edit "></i> </button></td>
-                    <td><button class="btn btn-danger" (click)="deleteProduct(product.id)" role="button" name="Remove Product"><i class="fa fa-trash" ></i></button></td>
-                </tr>
-            </tbody>      
-            <tfoot class="tfoot-dark"></tfoot>
-        </table>
+    </div>
+    <div *ngIf="isOrder">
+        <div *ngIf="!listProducts.length == 0">
+            <table class="table table-hover table-bordered display table-selected">
+                <thead class="thead-primary">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Lote</th>
+                        <th>Quantity</th>
+                        <th>Manufacturer</th>
+                        <th>Details Product</th>
+                        <th>Edit Product</th>
+                        <th>Remove Product</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of listProducts" (click)="rowSelected(product)"
+                    [class.highlighted]="product.id === currentId">
+                        <td>{{product.id}}</td>
+                        <td>{{product.nome}}</td>
+                        <td>{{product.lote}}</td>
+                        <td>{{product.quantity}}</td>
+                        <td>{{product.manufacturer}}</td>
+                        <td><button class="btn btn-primary" (click)="detailsProduct(product.id)" role="button" name="Details Product" > <i class="fa fa-info "></i> </button></td>
+                        <td><button class="btn btn-primary" [disabled]="true" (click)="editProduct(product.id)" role="button" name="Edit Product" > <i class="fa fa-edit "></i> </button></td>
+                        <td><button class="btn btn-danger" [disabled]="true" (click)="deleteProduct(product.id)" role="button" name="Remove Product"><i class="fa fa-trash" ></i></button></td>
+                    </tr>
+                </tbody>      
+                <tfoot class="tfoot-primary"></tfoot>
+            </table>
+        </div>
     </div>
     <div *ngIf="listProducts.length == 0">
         <h5 style="text-align: center;">No registered person, click <a routerLink="/products/add" >here</a> to add </h5>

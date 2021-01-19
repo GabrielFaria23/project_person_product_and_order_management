@@ -30,6 +30,6 @@ import { ProductListComponent } from "./productList/productList.component";
     providers: [
         ProductService
     ],
-    exports: []
+    exports: [ProductListComponent]
 })
 export class ProductModule {}

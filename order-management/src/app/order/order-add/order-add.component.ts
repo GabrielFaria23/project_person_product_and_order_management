@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Person } from 'src/app/person/person.model';
+import { Product } from 'src/app/product/product.model';
 import { Order } from '../order.model';
 import { OrderService } from '../order.service';
 
@@ -12,6 +14,7 @@ import { OrderService } from '../order.service';
 export class OrderAddComponent implements OnInit {
 
   orderForm: FormGroup;
+  order : Order = new Order;
 
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
@@ -30,6 +33,15 @@ export class OrderAddComponent implements OnInit {
 
   cancel(){
     this.router.navigate(['orders']);
+  }
+
+  getPersonToOrder(person: Person){
+    console.log(person);
+    this.order.person = person;
+  }
+
+  getProductToOrder(products: Product[]){
+    this.order.products.push(...products);
   }
 
   saveOrder(order: Order) {

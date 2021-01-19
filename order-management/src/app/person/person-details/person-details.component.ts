@@ -29,7 +29,7 @@ export class PersonDetailsComponent implements OnInit {
       )
   }
 
-  GoBack(){
+  goBack(){
     window.history.back();
   }
 

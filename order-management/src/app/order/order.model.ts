@@ -1,7 +1,9 @@
+import { Person } from "../person/person.model";
+import { Product } from "../product/product.model";
+
 export class Order{
     id: number;
-    nome: string;
-    lote: string;
-    quantity: number;
-    manufacturer: string;
+    dateHour: Date;
+    person: Person;
+    products: Product[];
 }

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { PersonModule } from "../person/person.module";
 import { PersonListComponent } from "../person/personList/personList.component";
+import { ProductModule } from "../product/product.module";
 import { InputModule } from "../shared/input/input.module";
 import { OrderAddComponent } from "./order-add/order-add.component";
 import { OrderDetailsComponent } from "./order-details/order-details.component";
@@ -28,6 +29,7 @@ import { OrderListComponent } from "./orderList/orderList.component";
         HttpClientModule,
         InputModule,
         PersonModule,
+        ProductModule
     ],
     providers: [
         OrderService

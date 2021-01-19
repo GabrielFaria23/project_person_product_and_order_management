@@ -1,7 +1,5 @@
-import { error } from '@angular/compiler/src/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 
@@ -13,6 +11,8 @@ import { PersonService } from '../person.service';
 export class PersonListComponent implements OnInit {
 
   people: Person[] = [];
+  person: Person;
+  @Input() public isOrder: Boolean = false;
 
   constructor(private personService: PersonService,
               private router: Router) { }
@@ -50,6 +50,10 @@ export class PersonListComponent implements OnInit {
         error => console.log(error)
       )
       
+  }
+
+  rowSelected(person: any){
+    this.person = person;
   }
 
 }

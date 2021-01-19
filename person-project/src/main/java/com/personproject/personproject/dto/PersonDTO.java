@@ -1,5 +1,6 @@
 package com.personproject.personproject.dto;
 
+import com.personproject.personproject.model.Order;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -36,4 +39,6 @@ public class PersonDTO {
 
     @Size(max = 200)
     private String telefone;
+
+    private List<Order> orders = new ArrayList<>();
 }

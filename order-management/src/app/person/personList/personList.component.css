@@ -12,10 +12,14 @@ h2 {
     margin-left: 1%;
 }
 
+.botoes{
+    text-align: center;
+}
+
 div button {
-    width: 20%;
-    margin-left: 1%;
-    margin-top: 1%;
+    width: 30%;
+    text-align: center;
+    margin: 1%;
 }
 
 fieldset{
@@ -37,6 +41,5 @@ fieldset legend {
 tbody td button {
     width: 40px;
 }
-
 
 

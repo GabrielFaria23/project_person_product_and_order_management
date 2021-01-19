@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
@@ -11,8 +11,10 @@ import { PersonService } from '../person.service';
 export class PersonListComponent implements OnInit {
 
   people: Person[] = [];
-  person: Person;
-  @Input() public isOrder: Boolean = false;
+  person: Person = null;
+  currentId: number = 0;
+  @Input() isOrder: Boolean = false;
+  @Output() addOrder = new EventEmitter;
 
   constructor(private personService: PersonService,
               private router: Router) { }
@@ -52,8 +54,17 @@ export class PersonListComponent implements OnInit {
       
   }
 
-  rowSelected(person: any){
+  rowSelected(person: Person){
     this.person = person;
+    this.currentId = person.id;
+  }
+
+  confirmPerson(){
+    this.addOrder.emit(this.person);
+  }
+
+  goBack(){
+    window.history.back();
   }
 
 }

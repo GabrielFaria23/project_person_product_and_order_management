@@ -1,1 +1,2 @@
-<app-person [isOrder]="true"></app-person>
+<app-person [isOrder]="true" (addOrder)="getPersonToOrder($event)"></app-person>
+<app-product [isOrder]="true" (addOrder)="getProductstoOrder($event)"></app-product>

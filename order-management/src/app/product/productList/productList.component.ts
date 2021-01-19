@@ -1,5 +1,5 @@
 import { error } from '@angular/compiler/src/util';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from '../product.model';
@@ -14,6 +14,9 @@ export class ProductListComponent implements OnInit {
 
   products: Observable<Product[]>;
   listProducts : Product[] = [];
+  @Input() isOrder: Boolean = false;
+  @Output() addOrder= new EventEmitter;
+  currentId: number = 0;
 
   constructor(private productService: ProductService,
               private router: Router) { }
@@ -53,6 +56,10 @@ export class ProductListComponent implements OnInit {
         error => console.log(error)
       )
       
+  }
+
+  rowsSelected(products:Product[]){
+    
   }
 
 }

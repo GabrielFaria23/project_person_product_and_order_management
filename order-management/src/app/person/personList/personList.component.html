@@ -60,7 +60,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let person of people" (click)="rowSelected(person)">
+                        <tr *ngFor="let person of people" (click)="rowSelected(person)"
+                            [class.highlighted]="person.id === currentId">
                             <td>{{person.id}}</td>
                             <td>{{person.nome}}</td>
                             <td>{{person.cpf | CPF}}</td>
@@ -74,7 +75,11 @@
                     </tbody>      
                     <tfoot class="tfoot-primary"></tfoot>
                 </table>
-            </div>
+                <div class="botoes">
+                    <button class="btn btn-success form-control" (click)="confirmPerson()" role="button" name="Select Person"><i class="fa fa-user"></i> Select Person</button>
+                    <button class="btn btn-danger form-control" (click)="goBack()" role="button" name="Go Back"><i class="fa fa-"></i> Go Back</button>
+                </div>                
+            </div>            
         </div>
         <div *ngIf="people.length == 0">
             <h5 style="text-align: center;">No registered person, click <a routerLink="/people/add" >here</a> to add </h5>

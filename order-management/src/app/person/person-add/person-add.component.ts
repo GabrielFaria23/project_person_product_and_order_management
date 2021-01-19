@@ -47,6 +47,9 @@ export class PersonAddComponent implements OnInit {
   }
 
   savePerson(person: Person) {
+    person.cpf = person.cpf.substring(0,11)
+    console.log(person);
+    
     this.personService.savePerson(person).
       subscribe(data => {
         console.log(data)

@@ -29,8 +29,8 @@ export class PersonDetailsComponent implements OnInit {
       )
   }
 
-  BackToList(){
-    this.router.navigate(['people'])
+  GoBack(){
+    window.history.back();
   }
 
 }

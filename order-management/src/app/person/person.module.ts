@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { InputComponent } from "../shared/input/input.component";
+
 import { InputModule } from "../shared/input/input.module";
 import { CPFPipe } from "../shared/Pipe/cpf.pipe";
 import { RGPipe } from "../shared/Pipe/rg.pipe";
@@ -33,6 +33,6 @@ import { PersonListComponent } from "./personList/personList.component";
     providers: [
         PersonService
     ],
-    exports: []
+    exports: [PersonListComponent, CPFPipe]
 })
 export class PersonModule {}
